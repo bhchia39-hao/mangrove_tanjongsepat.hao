@@ -232,8 +232,23 @@
                             <p>Post-2025 engineering has systematically undermined the operational foundation of the entire ecosystem.</p>
                         </div>
                     </div>
-				</div>
-                    
+
+                    <!-- Before-After Slider — correctly placed inside tab-pane -->
+                    <div class="before-after-small">
+                        <h4 style="text-align:center; margin:1.5rem 0 0.8rem; color: var(--primary-dark);">Coastal Structure Comparison: 2007 vs. Post-2025</h4>
+                        <div class="ba-container">
+                            <img src="images/2025.png" alt="After 2025" class="ba-image">
+                            <div class="ba-before">
+                                <img src="images/2007.png" alt="Before 2007" class="ba-image">
+                            </div>
+                            <div class="ba-divider"></div>
+                            <input type="range" min="0" max="100" value="50" class="ba-slider" aria-label="Drag to compare before and after">
+                            <div class="ba-label before">2007</div>
+                            <div class="ba-label after">2025</div>
+                        </div>
+                        <p class="ba-caption">Drag the slider to reveal changes after engineering intervention and sand advancement.</p>
+                    </div>
+                </div>
 
                 <!-- Tab 3: Sand Advancement -->
                 <div id="findings-3" class="tab-pane">
@@ -553,6 +568,24 @@
                 </div>
             </div>
 
+            <div class="upload-instructions">
+                <h3>Image File Reference</h3>
+                <div class="instructions-content">
+                    <p>Place images in the <code>images/</code> folder. Naming convention:</p>
+                    <ul class="image-list">
+                        <li>img1.1.1 – img1.1.3: Background &amp; Engineering</li>
+                        <li>img2.0.1 – img2.0.6: Geographic &amp; Analysis</li>
+                        <li>img2.1.1 – img2.1.4: Pre-2025 Structure</li>
+                        <li>img2.2.1 – img2.2.3: Post-2025 Changes</li>
+                        <li>img3.1.1: Advancement Trends</li>
+                        <li>img4.1.1: Biodiversity</li>
+                        <li>img5.1.1: Hydrological Analysis</li>
+                        <li>Field photos: Named by date and zone (e.g. field-20250727-B001.jpg)</li>
+                    </ul>
+                    <p><strong>Format:</strong> JPG, PNG, WebP &nbsp;|&nbsp; <strong>Max size:</strong> 5 MB per image</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Conclusions Section -->
@@ -625,6 +658,11 @@
                     </blockquote>
                     <p><strong>The present moment represents not an endpoint, but a threshold.</strong></p>
                 </div>
+
+                <div class="conclusion-box" style="border-left: 4px solid var(--text-secondary); background: #f8fafc;">
+                    <h3 style="color: var(--text-secondary);"><i class="fas fa-info-circle" style="color: var(--text-secondary);"></i> Methodological Note</h3>
+                    <p style="color: var(--text-secondary); font-style: italic;">While the current observations provide a preliminary overview of mangrove coverage, it should be emphasized that these are basic observations. Analyses using higher-resolution imagery would enable more accurate and precise quantification of changes in mangrove habitats, including habitat loss.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -659,7 +697,7 @@
                     <ul>
                         <li><i class="fas fa-user" style="margin-right:0.5rem; opacity:0.6;"></i> Researcher: Hao</li>
                         <li><i class="fas fa-envelope" style="margin-right:0.5rem; opacity:0.6;"></i>
-                            <a href="mailto:bh.chia39@gmail.com">bh.chia39@gmail.com</a>
+                            <a href="/cdn-cgi/l/email-protection#6b0903450803020a58522b0c060a020745080406"><span class="__cf_email__" data-cfemail="56343e78353e3f37656f16313b373f3a7835393b">[email&#160;protected]</span></a>
                         </li>
                         <li><i class="fas fa-phone" style="margin-right:0.5rem; opacity:0.6;"></i>
                             <a href="tel:+60111-631-3461">011-1631 3461</a>
@@ -677,10 +715,4 @@
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" title="Scroll to Top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    <button class="scroll-to-top" id="scrollToTo
