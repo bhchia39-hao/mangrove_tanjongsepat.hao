@@ -57,7 +57,16 @@ function initializeTabs() {
 
             this.classList.add('active');
             const target = document.getElementById(targetTab);
-            if (target) target.classList.add('active');
+            if (target) {
+                target.classList.add('active');
+
+                // Force all .reveal elements inside this tab to become visible
+                // (they may have been invisible when IntersectionObserver fired
+                //  because the tab-pane was display:none at that time)
+                target.querySelectorAll('.reveal').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }
         });
     });
 }
@@ -234,11 +243,13 @@ function initializeBeforeAfterSliders() {
 
 // ==================== Scroll Reveal ====================
 function initializeScrollReveal() {
-    // Add .reveal class to all section children that should animate
+    // DO NOT include .finding-card here — they live inside hidden tabs (display:none)
+    // and IntersectionObserver can never trigger on hidden elements → cards stay invisible forever.
+    // Finding-cards are handled separately in revealFindingCards().
     const revealTargets = document.querySelectorAll(
-        '.content-box, .stat-card, .finding-card, .timeline-item, ' +
+        '.content-box, .stat-card, .timeline-item, ' +
         '.methodology-item, .conclusion-box, .recommendation-item, ' +
-        '.gallery-item, .comparison-item'
+        '#gallery .gallery-item, .comparison-item'
     );
 
     revealTargets.forEach(el => el.classList.add('reveal'));
@@ -250,9 +261,36 @@ function initializeScrollReveal() {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
     revealTargets.forEach(el => observer.observe(el));
+
+    // Handle finding-cards separately
+    revealFindingCards();
+}
+
+function revealFindingCards() {
+    // Immediately show cards in the default active tab (findings-1) with stagger
+    document.querySelectorAll('.tab-pane.active .finding-card').forEach((card, i) => {
+        card.classList.add('reveal');
+        setTimeout(() => card.classList.add('visible'), 60 + i * 80);
+    });
+
+    // On every tab click, stagger-reveal cards in the newly opened tab
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const targetId = this.getAttribute('data-tab');
+            const pane = document.getElementById(targetId);
+            if (!pane) return;
+            const cards = pane.querySelectorAll('.finding-card');
+            cards.forEach((card, i) => {
+                card.classList.remove('visible');
+                card.classList.add('reveal');
+                // Small delay so the tab switch CSS transition finishes first
+                setTimeout(() => card.classList.add('visible'), 80 + i * 70);
+            });
+        });
+    });
 }
 
 // ==================== Active Nav Link on Scroll ====================
