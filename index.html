@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
@@ -22,9 +23,8 @@
                 <li><a href="#timeline">Timeline</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#conclusions">Conclusions</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="navbar-toggle" id="navbarToggle">
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -39,7 +39,6 @@
         <a href="#timeline">Timeline</a>
         <a href="#gallery">Gallery</a>
         <a href="#conclusions">Conclusions</a>
-        <a href="#contact">Contact</a>
     </div>
 
     <!-- Hero Section -->
@@ -134,8 +133,8 @@
     <!-- Study Area Section -->
     <section id="methodology" class="section alt-bg">
         <div class="container">
-            <h2 class="section-title">2. Study Area Overview & Methodology</h2>
-            
+            <h2 class="section-title">2. Study Area Overview &amp; Methodology</h2>
+
             <div class="methodology-content">
                 <div class="methodology-item">
                     <div class="methodology-step">1</div>
@@ -146,19 +145,16 @@
                         <li><strong>Eastern Zone:</strong> B001</li>
                     </ul>
                 </div>
-
                 <div class="methodology-item">
                     <div class="methodology-step">2</div>
                     <h3>White Sand Source Analysis</h3>
                     <p>Official explanations attribute sand to natural geomorphological evolution following the 2004 tsunami. However, considering regional development contexts, human influences cannot be excluded.</p>
                 </div>
-
                 <div class="methodology-item">
                     <div class="methodology-step">3</div>
                     <h3>Temporal Demarcation</h3>
                     <p>The study uses 2025 as a temporal demarcation to compare coastal structure before and after human engineering interventions.</p>
                 </div>
-
                 <div class="methodology-item">
                     <div class="methodology-step">4</div>
                     <h3>Data Sources</h3>
@@ -182,11 +178,13 @@
                 <button class="tab-btn active" data-tab="findings-1">Coastal Structure Before 2025</button>
                 <button class="tab-btn" data-tab="findings-2">Coastal Changes After 2025</button>
                 <button class="tab-btn" data-tab="findings-3">Sand Advancement Trends</button>
-                <button class="tab-btn" data-tab="findings-4">Biodiversity & Ecology</button>
+                <button class="tab-btn" data-tab="findings-4">Biodiversity &amp; Ecology</button>
                 <button class="tab-btn" data-tab="findings-5">Species Distribution</button>
             </div>
 
             <div class="tab-content">
+
+                <!-- Tab 1: Before 2025 -->
                 <div id="findings-1" class="tab-pane active">
                     <h3>Coastal Structure Characteristics Before 2025</h3>
                     <div class="findings-grid">
@@ -209,16 +207,17 @@
                     </div>
                 </div>
 
+                <!-- Tab 2: After 2025 -->
                 <div id="findings-2" class="tab-pane">
                     <h3>Coastal Structure Changes After 2025</h3>
                     <div class="alert alert-warning">
                         <i class="fas fa-exclamation-triangle"></i>
-                        <strong>Critical Turning Point:</strong> Starting in 2025, the coastal structure underwent drastic human-induced modification
+                        <strong>Critical Turning Point:</strong> Starting in 2025, the coastal structure underwent drastic human-induced modification.
                     </div>
                     <div class="findings-grid">
                         <div class="finding-card critical">
                             <h4><i class="fas fa-hard-hat"></i> Engineering Intervention</h4>
-                            <p>RM7.9 million recirculating diaphragm upgrade project (June 21, 2024 – July 21, 2026) including 375m rock revetment, training walls, and beach cultivation.</p>
+                            <p>RM7.9 million DID (Department of Irrigation and Drainage) river mouth coastal protection project (June 21, 2024 – July 21, 2026), including a 375 m rock revetment, training walls, and beach nourishment works.</p>
                         </div>
                         <div class="finding-card critical">
                             <h4><i class="fas fa-tree"></i> Vegetation Destruction</h4>
@@ -233,163 +232,152 @@
                             <p>Post-2025 engineering has systematically undermined the operational foundation of the entire ecosystem.</p>
                         </div>
                     </div>
-                </div>
-				<!-- Before-After 對比：海岸結構 2001 vs 2022/後期 -->
-<div class="before-after-small">
-  <h4 style="text-align:center; margin:1rem 0 0.8rem;">海岸結構前後對比（2007 vs 2025後）</h4>
-  <div class="ba-container">
-    <img src="images/2025.png" alt="After 2025"class="ba-image">
-    <div class="ba-before">
-      <img src="images/2007.png" alt="Before 2007" class="ba-image">
-    </div>
-    <input type="range" min="0" max="100" value="50" class="ba-slider" aria-label="拖動比較前後變化">
-    <div class="ba-label before">2007 </div>
-    <div class="ba-label after">2025 </div>
-  </div>
-  <p class="ba-caption" style="text-align:center; margin-top:0.8rem;">向右拖動滑桿可看到工程與沙灘推進後的變化</p>
-</div>
-</div>
-</div>
+
+                    
+
+                <!-- Tab 3: Sand Advancement -->
                 <div id="findings-3" class="tab-pane">
                     <h3>White Sand Advancement Trend and Regional Ecological Risk</h3>
                     <div class="findings-grid">
                         <div class="finding-card">
                             <h4><i class="fas fa-chart-line"></i> Advancement Rate and Pattern</h4>
-                            <p><strong>Before 2025:</strong> Sand consistently advanced westward from B001 zone at accelerating rates. <strong>2025 Status:</strong> Sand front reached boundary between A001 and A002.</p>
+                            <p><strong>Before 2025:</strong> Sand consistently advanced westward from B001 zone at accelerating rates. <strong>2025 Status:</strong> Sand front reached the boundary between A001 and A002.</p>
                         </div>
                         <div class="finding-card">
                             <h4><i class="fas fa-expand"></i> Area Expansion Data</h4>
                             <p><strong>2025 White Sand Area:</strong> 9,752 m². <strong>Net Increase Rate:</strong> ~540 m²/year. <strong>Growth Pattern:</strong> Non-linear with early rapid initiation.</p>
                         </div>
-                        <div class="finding-card alert alert-danger">
+                        <div class="finding-card">
                             <h4><i class="fas fa-warning"></i> Beyond Natural Processes</h4>
-                            <p>This expansion over 18 years exceeds scale explained by natural sedimentation and directly threatens mangrove stability.</p>
+                            <p>This expansion over 18 years exceeds the scale explainable by natural sedimentation alone, and directly threatens mangrove stability.</p>
                         </div>
-                        <div class="finding-card alert alert-danger">
+                        <div class="finding-card">
                             <h4><i class="fas fa-exclamation-triangle"></i> Regional Chain Reaction Risk</h4>
-                            <p>Current engineering presents local and regional risks, potentially causing irreversible mangrove damage along southern Selangor coast.</p>
+                            <p>Current engineering presents local and regional risks, potentially causing irreversible mangrove damage along the southern Selangor coast.</p>
                         </div>
                     </div>
                 </div>
 
-                                <div id="findings-4" class="tab-pane">
+                <!-- Tab 4: Biodiversity -->
+                <div id="findings-4" class="tab-pane">
                     <h3>Biodiversity and Ecological Significance</h3>
                     <div class="findings-grid">
-                        <div class="finding-card highlight">
-                            <h4><i class="fas fa-leaf"></i> Flora - Mangrove Species</h4>
-                            <p>2-3 mangrove species recorded: Rhizophora, Bruguiera and Avicennia, indicating structurally complex and mature ecosystem.</p>
-                        <div class="gallery-grid">
-						 <div class="gallery-item">
-            <img src="images/Rhizophora-mangrove.png" alt="Rhizophora" loading="lazy">
-            
-        </div>
-		 <div class="gallery-item">
-            <img src="images/Bruguiera-mangrove.png" alt="Bruguiera" loading="lazy">
-            
-        </div> <div class="gallery-item">
-            <img src="images/Avicennia-mangrove.png" alt="Avicennia" loading="lazy">
-            
-        </div>
-		</div>
-		</div>
-                        <div class="finding-card highlight">
-    <h4><i class="fas fa-bird"></i> Avifauna (Birds)</h4>
-    <p>Grey Heron, Little Egret, Striated Heron, Todiramphus chloris, Haliastur indus, Crow, Seagull and other raptors. Hornbills observed historically.</p>
-    
-    <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="images/Little Egret-mangrove.png" alt="Little Egret" loading="lazy">
-            <div class="gallery-caption">Little Egret</div>
-        </div>
-        
-        <div class="gallery-item">
-            <img src="images/Striated Heron-mangrove.png" alt="Striated Heron" loading="lazy">
-            <div class="gallery-caption">Striated Heron</div>
-        </div>
-        
-        <div class="gallery-item">
-            <img src="images/Todiramphus chloris-mangrove.png" alt="Todiramphus chloris" loading="lazy">
-            <div class="gallery-caption">Todiramphus chloris</div>
-        </div>
-    </div>
-</div>
-                        <div class="finding-card highlight">
-                            <h4><i class="fas fa-water"></i> Pelagic & Benthic Fauna</h4>
-                            <p>Fish species, Mudskippers, Pufferfish, Platycephalus indicus Linnaeus, bivalves (mussels, clams) indicating stable water exchange and productive benthic ecosystems.</p>
-							<div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="images/mudskipper-mangrove.png" alt="Mudskipper" loading="lazy">
-            <div class="gallery-caption">Mudskipper</div>
-        </div>
-        
-        <!-- 新增：Pufferfish (河豚) – 選 estuary/mangrove 相關的 -->
-        <div class="gallery-item">
-            <img src="images/pufferfish-estuary.png" alt="Pufferfish" loading="lazy">
-            <div class="gallery-caption">Pufferfish</div>
-        </div>
-        
- 
-		
-		<div class="gallery-item">
-            <img src="images/Platycephalus indicus Linnaeus-mangrove.png" alt=" Platycephalus indicus Linnaeus" loading="lazy">
-            <div class="gallery-caption"> Platycephalus indicus Linnaeus</div>
-        </div>
 
-    </div>
-   </div>
+                        <div class="finding-card highlight">
+                            <h4><i class="fas fa-leaf"></i> Flora — Mangrove Species</h4>
+                            <p>2–3 mangrove species recorded: <em>Rhizophora</em>, <em>Bruguiera</em>, and <em>Avicennia</em>, indicating a structurally complex and mature ecosystem.</p>
+                            <div class="gallery-grid">
+                                <div class="gallery-item">
+                                    <img src="images/Rhizophora-mangrove.png" alt="Rhizophora" loading="lazy">
+                                    <div class="gallery-caption">Rhizophora</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="images/Bruguiera-mangrove.png" alt="Bruguiera" loading="lazy">
+                                    <div class="gallery-caption">Bruguiera</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="images/Avicennia-mangrove.png" alt="Avicennia" loading="lazy">
+                                    <div class="gallery-caption">Avicennia</div>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="finding-card highlight">
+                            <h4><i class="fas fa-dove"></i> Avifauna (Birds)</h4>
+                            <p>Grey Heron, Little Egret, Striated Heron, <em>Todiramphus chloris</em>, <em>Haliastur indus</em>, Crow, Seagull, and other raptors. Hornbills observed historically.</p>
+                            <div class="gallery-grid">
+                                <div class="gallery-item">
+                                    <img src="images/Little Egret-mangrove.png" alt="Little Egret" loading="lazy">
+                                    <div class="gallery-caption">Little Egret</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="images/Striated Heron-mangrove.png" alt="Striated Heron" loading="lazy">
+                                    <div class="gallery-caption">Striated Heron</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="images/Todiramphus chloris-mangrove.png" alt="Todiramphus chloris" loading="lazy">
+                                    <div class="gallery-caption">Todiramphus chloris</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="finding-card highlight">
+                            <h4><i class="fas fa-fish"></i> Pelagic &amp; Benthic Fauna</h4>
+                            <p>Fish species, Mudskippers, Pufferfish, <em>Platycephalus indicus</em> Linnaeus, and bivalves (mussels, clams), indicating stable water exchange and a productive benthic ecosystem.</p>
+                            <div class="gallery-grid">
+                                <div class="gallery-item">
+                                    <img src="images/mudskipper-mangrove.png" alt="Mudskipper" loading="lazy">
+                                    <div class="gallery-caption">Mudskipper</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="images/pufferfish-estuary.png" alt="Pufferfish" loading="lazy">
+                                    <div class="gallery-caption">Pufferfish</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="images/Platycephalus indicus Linnaeus-mangrove.png" alt="Platycephalus indicus Linnaeus" loading="lazy">
+                                    <div class="gallery-caption">Platycephalus indicus</div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="finding-card highlight">
                             <h4><i class="fas fa-bug"></i> Intertidal Macrofauna</h4>
-                            <p><strong>Crustaceans:</strong>Mantis shrimps, crabs (various species), shrimp ,Shellfish.</p>
-                        <div class="gallery-grid">
-						<div class="gallery-item">
-            <img src="images/Mantis shrimps-mangrove.png" alt="Mantis shrimps" loading="lazy">
-            <div class="gallery-caption">Mantis shrimps</div>
-        </div>
-		<div class="gallery-item">
-            <img src="images/crabs-mangrove.png" alt="crabs" loading="lazy">
-            <div class="gallery-caption">crabs</div>
-        </div>
-		<div class="gallery-item">
-            <img src="images/Shellfish-mangrove.png" alt="Shellfish" loading="lazy">
-            <div class="gallery-caption">Shellfish</div>
-        </div>
-		</div>
-		
-                        <div class="finding-card highlight">
-                            <h4><i class="fas fa-shield-alt"></i> Megafauna & Protected Species</h4>
-                            <p><strong>Mammals:</strong> Macaques, Monitor lizards. <strong>Chelonians:</strong> Horseshoe crabs (Tachypleus gigas / Carcinoscorpius rotundicauda) - highly protected intertidal species, indicator of ecosystem health.</p>
-						<div class="gallery-grid">
-						<div class="gallery-item">
-            <img src="images/Horseshoe crabs-mangrove.png" alt="Horseshoe crabs" loading="lazy">
-            <div class="gallery-caption">Horseshoe crabs</div>
-        </div>
-		</div>
-                        <div class="alert alert-info">
-                            <i class="fas fa-check-circle"></i>
-                            <strong>Conclusion:</strong> Ecosystem exhibits high biodiversity and functional diversity. High species richness indicates systemic collapse, not simple vegetation loss - the ecosystem was thriving before 2025.
+                            <p><strong>Crustaceans:</strong> Mantis shrimps, crabs (various species), shrimp, and shellfish.</p>
+                            <div class="gallery-grid">
+                                <div class="gallery-item">
+                                    <img src="images/Mantis shrimps-mangrove.png" alt="Mantis shrimps" loading="lazy">
+                                    <div class="gallery-caption">Mantis Shrimps</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="images/crabs-mangrove.png" alt="Crabs" loading="lazy">
+                                    <div class="gallery-caption">Crabs</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="images/Shellfish-mangrove.png" alt="Shellfish" loading="lazy">
+                                    <div class="gallery-caption">Shellfish</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
+                        <div class="finding-card highlight">
+                            <h4><i class="fas fa-shield-alt"></i> Megafauna &amp; Protected Species</h4>
+                            <p><strong>Mammals:</strong> Macaques, Monitor lizards. <strong>Chelonians:</strong> Horseshoe crabs (<em>Tachypleus gigas</em> / <em>Carcinoscorpius rotundicauda</em>) — a highly protected intertidal species and key indicator of ecosystem health.</p>
+                            <div class="gallery-grid">
+                                <div class="gallery-item">
+                                    <img src="images/Horseshoe crabs-mangrove.png" alt="Horseshoe crabs" loading="lazy">
+                                    <div class="gallery-caption">Horseshoe Crabs</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- end findings-grid -->
+
+                    <div class="alert alert-info" style="margin-top: 1.5rem;">
+                        <i class="fas fa-check-circle"></i>
+                        <strong>Conclusion:</strong> The ecosystem exhibits high biodiversity and functional diversity. This species richness indicates that what occurred was a <em>systemic collapse</em>, not simple vegetation loss — the ecosystem was thriving before 2025.
+                    </div>
+                </div><!-- end findings-4 -->
+
+                <!-- Tab 5: Species Distribution -->
                 <div id="findings-5" class="tab-pane">
                     <h3>Species Distribution Differences and Hydrological Imbalance</h3>
                     <div class="findings-grid">
                         <div class="finding-card">
                             <h4><i class="fas fa-chart-pie"></i> Key Observation</h4>
-                            <p><strong>A001 & A002:</strong> Live organisms mainly recorded. <strong>B001 outer areas:</strong> Numerous deceased individuals. Pattern reflects severe hydrological imbalance.</p>
+                            <p><strong>A001 &amp; A002:</strong> Live organisms mainly recorded. <strong>B001 outer areas:</strong> Numerous deceased individuals. This spatial pattern directly reflects severe hydrological imbalance.</p>
                         </div>
                         <div class="finding-card">
                             <h4><i class="fas fa-biohazard"></i> Biological Sink Zones</h4>
-                            <p>Abnormal water exchange prevents energy dissipation. Organisms cannot return to suitable habitats. Seedling establishment halted.</p>
+                            <p>Abnormal water exchange prevents energy dissipation. Organisms cannot return to suitable habitats. Seedling establishment is halted.</p>
                         </div>
                         <div class="finding-card">
                             <h4><i class="fas fa-link"></i> Cascading Impact Risk</h4>
-                            <p>Engineering may alter hydrodynamics affecting other zones. Mangroves depend on spatial continuity - systemic collapse likely.</p>
+                            <p>Engineering may alter hydrodynamics affecting other zones. Mangroves depend on spatial continuity — systemic collapse is likely if no intervention occurs.</p>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div><!-- end findings-5 -->
+
+            </div><!-- end tab-content -->
         </div>
     </section>
 
@@ -404,11 +392,10 @@
                     <div class="timeline-date">March 9, 2025</div>
                     <div class="timeline-content">
                         <h4>Initial Exploration</h4>
-                        <p>First entry into taller mangrove areas (A001 & A002); ecosystem largely intact.</p>
+                        <p>First entry into taller mangrove areas (A001 &amp; A002); ecosystem largely intact.</p>
                         <span class="timeline-badge badge-info">Exploration</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">April 13, 2025</div>
                     <div class="timeline-content">
@@ -417,7 +404,6 @@
                         <span class="timeline-badge badge-warning">Anomaly</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">June 29, 2025</div>
                     <div class="timeline-content">
@@ -426,7 +412,6 @@
                         <span class="timeline-badge badge-secondary">Data Collection</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">July 8, 2025</div>
                     <div class="timeline-content">
@@ -435,7 +420,6 @@
                         <span class="timeline-badge badge-danger">Warning</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">July 24, 2025</div>
                     <div class="timeline-content">
@@ -444,7 +428,6 @@
                         <span class="timeline-badge badge-danger">Critical</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">July 26, 2025</div>
                     <div class="timeline-content">
@@ -453,34 +436,30 @@
                         <span class="timeline-badge badge-danger">Collapse Signs</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">July 27, 2025</div>
                     <div class="timeline-content">
                         <h4>Hydrological Severance Confirmed</h4>
-                        <p>Seawater exchange at mangrove front largely blocked; outer mangrove collapse.</p>
+                        <p>Seawater exchange at mangrove front largely blocked; outer mangrove collapse observed.</p>
                         <span class="timeline-badge badge-danger">Critical Point</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">July 28, 2025</div>
                     <div class="timeline-content">
                         <h4>Seawall Construction Confirmed</h4>
-                        <p>B001 seawall construction confirmed.</p>
+                        <p>B001 seawall construction officially confirmed.</p>
                         <span class="timeline-badge badge-dark">Engineering</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">August 1, 2025</div>
                     <div class="timeline-content">
                         <h4>Abnormal Water Phenomenon</h4>
-                        <p>A003 area water turned deep red; cause uncertain.</p>
+                        <p>A003 area water turned deep red; cause uncertain — possibly anaerobic decomposition or algal bloom.</p>
                         <span class="timeline-badge badge-warning">Anomaly</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">September 22, 2025</div>
                     <div class="timeline-content">
@@ -489,48 +468,43 @@
                         <span class="timeline-badge badge-dark">Progress</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">October 29, 2025</div>
                     <div class="timeline-content">
                         <h4>Tropical Cyclone Impact</h4>
-                        <p>Temporary area cleaning, but filling works ongoing.</p>
+                        <p>Temporary area cleaning observed, but sand-filling works ongoing.</p>
                         <span class="timeline-badge badge-secondary">Natural Event</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">November 25, 2025</div>
                     <div class="timeline-content">
                         <h4>Persistent Discoloration</h4>
-                        <p>Red-colored water in A003 and outer areas persists.</p>
+                        <p>Red-colored water in A003 and outer areas persists; source unresolved.</p>
                         <span class="timeline-badge badge-warning">Pollution</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">December 9, 2025</div>
                     <div class="timeline-content">
                         <h4>Benthic Fauna Affected</h4>
-                        <p>A001 outer beach water turbid; benthic fauna covered by soil.</p>
+                        <p>A001 outer beach water turbid; benthic fauna covered by sediment runoff.</p>
                         <span class="timeline-badge badge-danger">Damage</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">January 29, 2026</div>
                     <div class="timeline-content">
                         <h4>Large-Scale Rescue Operations</h4>
-                        <p>Rescued trapped organisms; engineering reached A001.</p>
+                        <p>Rescued trapped organisms; engineering works reached A001.</p>
                         <span class="timeline-badge badge-dark">Expansion</span>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">February 9, 2026</div>
                     <div class="timeline-content">
                         <h4>Large-Scale Sand Dumping</h4>
-                        <p>Large-scale white sand dumping in B001 outer areas noted.</p>
+                        <p>Large-scale white sand dumping in B001 outer areas recorded.</p>
                         <span class="timeline-badge badge-danger">Acceleration</span>
                     </div>
                 </div>
@@ -539,93 +513,47 @@
     </section>
 
     <!-- Gallery Section -->
-<section id="gallery" class="section">
-    <div class="container">
-        <h2 class="section-title">5. Image Gallery</h2>
-        <p class="section-subtitle">Upload images to enhance report visualization</p>
-        
-        <div class="gallery-notice">
-            <i class="fas fa-image"></i>
-            <p>Pending Image Upload List (32 total images)</p>
-        </div>
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title">5. Image Gallery</h2>
+            <p class="section-subtitle">Field documentation and remote sensing imagery (2007–2026)</p>
 
-        <div class="gallery-grid">
-            <!-- 建議圖片順序：背景 → 時序 → 工程 → 地圖 → 分析 → 其他 -->
-            <div class="gallery-item">
-                <img src="images/img2007-2017.png" alt="Sand encroachment (2007-2017)" loading="lazy">
-                <div class="gallery-caption">Sand encroachment (2007–2017)</div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/img2007-2017.png" alt="Sand encroachment (2007–2017)" loading="lazy">
+                    <div class="gallery-caption">Sand encroachment (2007–2017)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img1.1.2.png" alt="Time-series comparison" loading="lazy">
+                    <div class="gallery-caption">Time-series comparison</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img1.1.3.png" alt="DID project information" loading="lazy">
+                    <div class="gallery-caption">DID project information</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img2.0.1.png" alt="Study area map" loading="lazy">
+                    <div class="gallery-caption">Study area map</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img2.0.2.png" alt="2007–2025 series" loading="lazy">
+                    <div class="gallery-caption">2007–2025 satellite series</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img2.0.3.png" alt="Sand expansion" loading="lazy">
+                    <div class="gallery-caption">Sand expansion mapping</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img2.0.4.png" alt="Zone partition map" loading="lazy">
+                    <div class="gallery-caption">Zone partition map</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img2.0.5.png" alt="Beach background" loading="lazy">
+                    <div class="gallery-caption">Beach background survey</div>
+                </div>
             </div>
 
-            <div class="gallery-item">
-                <img src="images/img1.1.2.png" alt="Time-series comparison" loading="lazy">
-                <div class="gallery-caption">Time-series comparison</div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/img1.1.3.png" alt="DID project info" loading="lazy">
-                <div class="gallery-caption">DID project info</div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/img2.0.1.png" alt="Study area map" loading="lazy">
-                <div class="gallery-caption">Study area map</div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/img2.0.2.png" alt="2007–2025 series" loading="lazy">
-                <div class="gallery-caption">2007–2025 series</div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/img2.0.3.png" alt="Sand expansion" loading="lazy">
-                <div class="gallery-caption">Sand expansion</div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/img2.0.4.png" alt="Partition map" loading="lazy">
-                <div class="gallery-caption">Partition map</div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/img2.0.5.png" alt="Beach background" loading="lazy">
-                <div class="gallery-caption">Beach background</div>
-            </div>
-
-            <!-- 如果你已經有更多圖片，就繼續在這裡添加，例如： -->
-            <!-- 
-            <div class="gallery-item">
-                <img src="images/img2.0.6.jpg" alt="..." loading="lazy">
-                <div class="gallery-caption">...</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/img2.1.1.jpg" alt="Pre-2025 Structure 1" loading="lazy">
-                <div class="gallery-caption">Pre-2025 Structure 1</div>
-            </div>
-            ... 一直加到 img5.1.1 和現場照片 ...
-            -->
-
-        </div>
-
-        <div class="upload-instructions">
-            <h3>How to Upload Images</h3>
-            <div class="instructions-content">
-                <p>Place images in the <code>images/</code> folder:</p>
-                <ul class="image-list">
-                    <li>img1.1.1 – img1.1.3: Background & Engineering</li>
-                    <li>img2.0.1 – img2.0.6: Geographic & Analysis</li>
-                    <li>img2.1.1 – img2.1.4: Pre-2025 Structure</li>
-                    <li>img2.2.1 – img2.2.3: Post-2025 Changes</li>
-                    <li>img3.1.1: Advancement Trends</li>
-                    <li>img4.1.1: Biodiversity</li>
-                    <li>img5.1.1: Hydrological Analysis</li>
-                    <li>Field photos: 12 observation photos</li>
-                </ul>
-                <p><strong>Format:</strong> JPG, PNG, WebP | <strong>Size:</strong> Max 5MB per image</p>
-                <p><strong>Tip:</strong> Use descriptive English filenames (e.g. sand-encroachment-2007-2017.webp) for better organization and SEO.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Conclusions Section -->
     <section id="conclusions" class="section alt-bg">
@@ -641,18 +569,10 @@
                 <div class="conclusion-box">
                     <h3><i class="fas fa-exclamation-triangle"></i> Critical Findings</h3>
                     <ul class="findings-list">
-                        <li>
-                            <strong>Geomorphological Erosion:</strong> East-to-west sand advancement systematically compressed mangrove habitats
-                        </li>
-                        <li>
-                            <strong>Hydrological Severance:</strong> Post-2025 engineering fundamentally altered coastal system functionality
-                        </li>
-                        <li>
-                            <strong>Ecological Indicators:</strong> Biological sink zones and increased mortality signal systemic collapse
-                        </li>
-                        <li>
-                            <strong>Regional Risk:</strong> Potential chain reactions affecting broader southern Selangor coast
-                        </li>
+                        <li><strong>Geomorphological Erosion:</strong> East-to-west sand advancement systematically compressed mangrove habitats.</li>
+                        <li><strong>Hydrological Severance:</strong> Post-2025 engineering fundamentally altered coastal system functionality.</li>
+                        <li><strong>Ecological Indicators:</strong> Biological sink zones and increased mortality signal systemic collapse.</li>
+                        <li><strong>Regional Risk:</strong> Potential chain reactions affecting the broader southern Selangor coast.</li>
                     </ul>
                 </div>
 
@@ -663,35 +583,35 @@
                             <span class="rec-number">1</span>
                             <div class="rec-content">
                                 <h4>Independent Ecological Assessment</h4>
-                                <p>Conduct transparent ecological impact assessments before continued engineering</p>
+                                <p>Conduct transparent ecological impact assessments before any continued engineering works.</p>
                             </div>
                         </div>
                         <div class="recommendation-item">
                             <span class="rec-number">2</span>
                             <div class="rec-content">
-                                <h4>Regional Hydrodynamic Modeling</h4>
-                                <p>Evaluate cross-boundary sediment and hydrodynamic risks</p>
+                                <h4>Regional Hydrodynamic Modelling</h4>
+                                <p>Evaluate cross-boundary sediment transport and hydrodynamic risks to adjacent mangrove areas.</p>
                             </div>
                         </div>
                         <div class="recommendation-item">
                             <span class="rec-number">3</span>
                             <div class="rec-content">
                                 <h4>Hydrological Connectivity Restoration</h4>
-                                <p>Immediately restore partial tidal exchange</p>
+                                <p>Immediately restore partial tidal exchange to arrest further ecosystem decline.</p>
                             </div>
                         </div>
                         <div class="recommendation-item">
                             <span class="rec-number">4</span>
                             <div class="rec-content">
                                 <h4>Sediment Control</h4>
-                                <p>Implement sediment management with urgency and precision</p>
+                                <p>Implement targeted sediment management measures with urgency and precision.</p>
                             </div>
                         </div>
                         <div class="recommendation-item">
                             <span class="rec-number">5</span>
                             <div class="rec-content">
                                 <h4>Conservation Status</h4>
-                                <p>Formally recognize as conservation-priority coastal ecosystem</p>
+                                <p>Formally recognize this area as a conservation-priority coastal ecosystem.</p>
                             </div>
                         </div>
                     </div>
@@ -709,75 +629,13 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Contact & Feedback</h2>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Research Information</h3>
-                    <div class="info-item">
-                        <i class="fas fa-user"></i>
-                        <div>
-                            <strong>Researcher:</strong>
-                            <p>Hao</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-calendar"></i>
-                        <div>
-                            <strong>Research Period:</strong>
-                            <p>March 2025 – February 2026</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <strong>Last Updated:</strong>
-                            <p>February 16, 2026</p>
-                        </div>
-                    </div>
-                </div>
-
-                                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mzdagere" method="POST">
-                    <h3>Comments & Feedback</h3>
-                    <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <input type="text" id="subject" name="_subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">Send Feedback</button>
-                </form>
-	</div>
-            <div class="resources-box">
-                <h3><i class="fas fa-link"></i> Related Resources</h3>
-                <ul class="resources-list">
-                    <li><a href="https://www.thestar.com.my/metro/metro-news/2025/10/10/pantai-cunangs-charm-ebbs" target="_blank">The Star: Pantai Cunang's Charm Ebbs <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="https://mpkl.gov.my/en/pelawat/tarikan-pelancong/pantai-cunang" target="_blank">Kuala Langat Council: Pantai Cunang <i class="fas fa-external-link-alt"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>About This Report</h4>
-                    <p>Academic research documenting mangrove ecosystem degradation in Southern Selangor (2007-2026) with comprehensive field observations.</p>
+                    <p>Independent field research documenting mangrove ecosystem degradation in Southern Selangor (2007–2026), based on systematic field observations over a 12-month period.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -785,21 +643,35 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#overview">Overview</a></li>
                         <li><a href="#findings">Findings</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#timeline">Timeline</a></li>
+                        <li><a href="#conclusions">Conclusions</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Resources</h4>
+                    <h4>Related Resources</h4>
                     <ul>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> PDF Report</a></li>
-                        <li><a href="#"><i class="fas fa-file-excel"></i> Data Tables</a></li>
-                        <li><a href="#"><i class="fas fa-image"></i> Images</a></li>
+                        <li><a href="https://www.thestar.com.my/metro/metro-news/2025/10/10/pantai-cunangs-charm-ebbs" target="_blank" rel="noopener">The Star: Pantai Cunang's Charm Ebbs <i class="fas fa-external-link-alt"></i></a></li>
+                        <li><a href="https://mpkl.gov.my/en/pelawat/tarikan-pelancong/pantai-cunang" target="_blank" rel="noopener">Kuala Langat Council: Pantai Cunang <i class="fas fa-external-link-alt"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-user" style="margin-right:0.5rem; opacity:0.6;"></i> Researcher: Hao</li>
+                        <li><i class="fas fa-envelope" style="margin-right:0.5rem; opacity:0.6;"></i>
+                            <a href="mailto:bh.chia39@gmail.com">bh.chia39@gmail.com</a>
+                        </li>
+                        <li><i class="fas fa-phone" style="margin-right:0.5rem; opacity:0.6;"></i>
+                            <a href="tel:+60111-631-3461">011-1631 3461</a>
+                        </li>
+                        <li><i class="fas fa-calendar" style="margin-right:0.5rem; opacity:0.6;"></i> Research Period: March 2025 – February 2026</li>
+                        <li><i class="fas fa-clock" style="margin-right:0.5rem; opacity:0.6;"></i> Last Updated: February 16, 2026</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Southern Selangor Mangrove Ecosystem Research. All rights reserved.</p>
-                <p>Academic Research | Environmental Assessment | Coastal Ecology</p>
+                <p>Academic Research &nbsp;|&nbsp; Environmental Assessment &nbsp;|&nbsp; Coastal Ecology</p>
             </div>
         </div>
     </footer>
@@ -809,7 +681,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
