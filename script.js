@@ -243,9 +243,9 @@ function initializeBeforeAfterSliders() {
 
 // ==================== Scroll Reveal ====================
 function initializeScrollReveal() {
-    // DO NOT include .finding-card here — they live inside hidden tabs (display:none)
-    // and IntersectionObserver can never trigger on hidden elements → cards stay invisible forever.
-    // Finding-cards are handled separately in revealFindingCards().
+    // Only apply reveal to always-visible elements (NOT inside hidden tabs)
+    // Finding-cards are NEVER given the reveal class — they must always be opacity:1
+    // so they work correctly on mobile when switching tabs
     const revealTargets = document.querySelectorAll(
         '.content-box, .stat-card, .timeline-item, ' +
         '.methodology-item, .conclusion-box, .recommendation-item, ' +
@@ -265,31 +265,12 @@ function initializeScrollReveal() {
 
     revealTargets.forEach(el => observer.observe(el));
 
-    // Handle finding-cards separately
-    revealFindingCards();
-}
-
-function revealFindingCards() {
-    // Immediately show cards in the default active tab (findings-1) with stagger
-    document.querySelectorAll('.tab-pane.active .finding-card').forEach((card, i) => {
-        card.classList.add('reveal');
-        setTimeout(() => card.classList.add('visible'), 60 + i * 80);
-    });
-
-    // On every tab click, stagger-reveal cards in the newly opened tab
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const targetId = this.getAttribute('data-tab');
-            const pane = document.getElementById(targetId);
-            if (!pane) return;
-            const cards = pane.querySelectorAll('.finding-card');
-            cards.forEach((card, i) => {
-                card.classList.remove('visible');
-                card.classList.add('reveal');
-                // Small delay so the tab switch CSS transition finishes first
-                setTimeout(() => card.classList.add('visible'), 80 + i * 70);
-            });
-        });
+    // Guarantee all finding-cards are always fully visible — no animation
+    // This prevents opacity:0 getting permanently stuck on mobile
+    document.querySelectorAll('.finding-card').forEach(card => {
+        card.style.opacity = '1';
+        card.style.transform = 'none';
+        card.style.transition = 'box-shadow 0.3s ease, transform 0.3s ease';
     });
 }
 

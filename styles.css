@@ -560,8 +560,13 @@ body {
 /* ===================== Findings Grid & Cards ===================== */
 .findings-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
+}
+
+/* Biodiversity tab: image-heavy cards get more breathing room */
+#findings-4 .findings-grid {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 }
 
 .finding-card {
@@ -569,8 +574,10 @@ body {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.8rem;
-    transition: var(--transition);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     border-left: 4px solid var(--primary-light);
+    /* Always fully visible — never participate in scroll-reveal animation */
+    opacity: 1 !important;
 }
 
 .finding-card:hover {
@@ -874,19 +881,64 @@ body {
 
 /* ===================== Finding cards inner gallery (small) ===================== */
 .finding-card .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 0.8rem;
-    margin: 1rem 0 0.5rem;
+    margin: 1.2rem 0 0;
 }
 
-.finding-card .gallery-item {
-    max-height: 110px;
+/* Always visible — never affected by scroll reveal */
+.finding-card .gallery-item,
+.finding-card .gallery-item.reveal,
+.finding-card .gallery-item.reveal.visible {
+    position: relative;
     aspect-ratio: 4 / 3;
+    height: auto;
+    max-height: none;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    background: var(--light-bg);
+    opacity: 1 !important;
+    transform: none !important;
+    transition: box-shadow 0.3s ease !important;
+}
+
+.finding-card .gallery-item:hover {
+    transform: none;           /* 卡片内图片不要整体上移，只缩放 */
+    box-shadow: var(--shadow-md);
+}
+
+.finding-card .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.finding-card .gallery-item:hover img {
+    transform: scale(1.08);
 }
 
 .finding-card .gallery-caption {
-    font-size: 0.78rem;
-    padding: 0.6rem 0.5rem 0.4rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 0.76rem;
+    padding: 1rem 0.5rem 0.4rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.72), transparent);
+    color: white;
+    text-align: center;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.finding-card .gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 /* ===================== Before-After Slider ===================== */
