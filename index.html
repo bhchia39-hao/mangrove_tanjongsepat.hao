@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hydrological Severance and Sediment Imbalance: Mangrove Ecosystem Decline in Southern Selangor (2007–2026)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--primary:#0f6b4f;--primary-dark:#0a4d39;--text:#1b2a24;--text-secondary:#5b6b64;--bg:#fff;--alt:#f1f6f3;--bd:#d8e2dd;--red:#c0392b;--r:12px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;color:var(--text);background:var(--bg);font:16px/1.7 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+img{max-width:100%}a{color:var(--primary)}
+.container{max-width:1160px;margin:0 auto;padding:0 18px}
+.navbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--bd)}
+.navbar .container{display:flex;align-items:center;gap:20px;height:52px}
+.navbar-brand h1{font-size:16px;margin:0;white-space:nowrap;color:var(--primary-dark)}
+.navbar-menu{list-style:none;display:flex;gap:16px;margin:0;padding:0;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.navbar-menu a{text-decoration:none;color:var(--text-secondary);font-size:14px;font-weight:600}
+.navbar-menu a:hover{color:var(--primary)}
+@media(max-width:700px){.navbar-brand{display:none}}
+.hero{background:linear-gradient(135deg,#0a4d39,#127a58);color:#fff;padding:40px 18px;text-align:center}
+.hero-overlay{display:none}.hero h1{font-size:clamp(24px,4vw,38px);margin:0 0 6px;line-height:1.25}
+.hero h2{font-size:clamp(15px,2.2vw,20px);font-weight:500;margin:0 0 10px;opacity:.95}
+.subtitle{margin:0 0 16px;opacity:.85;font-size:14px}
+.cta-button{display:inline-block;background:#fff;color:var(--primary-dark);padding:9px 20px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px}
+.section{padding:48px 0}.alt-bg{background:var(--alt)}
+.section-title{font-size:26px;margin:0 0 8px;color:var(--primary-dark)}
+.section-subtitle,.tl-hint{color:var(--text-secondary);margin:0 0 20px}
+.lead{color:var(--text-secondary);margin:0 0 16px;max-width:760px}
+.quick-stats{padding:26px 0;background:var(--alt)}
+.quick-stats .container{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:14px;text-align:center}
+.stat-icon{color:var(--primary);font-size:20px}.stat-card h3{margin:4px 0;font-size:22px}.stat-card p{margin:0;color:var(--text-secondary);font-size:14px}
+@media(max-width:700px){.quick-stats .container{grid-template-columns:repeat(2,1fr)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px}
+.chips b{font-size:13px;color:var(--text-secondary);margin-right:2px}
+.chip{border:1px solid var(--bd);background:#fff;border-radius:999px;padding:5px 13px;font:inherit;font-size:14px;cursor:pointer;color:var(--text)}
+.chip.on{background:var(--primary);border-color:var(--primary);color:#fff}.chip[disabled]{opacity:.45;cursor:not-allowed}
+.chip i.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.mapbox{border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;background:#fff}
+.mapview{overflow:auto;max-height:78vh}.mapstage{position:relative;width:100%;line-height:0}
+.mapstage>img{width:100%;display:block}
+.pin{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;border:3px solid #fff;box-shadow:0 1px 6px #0007;color:#fff;font:700 11px/20px sans-serif;text-align:center;padding:0;cursor:pointer}
+.pin:hover,.pin.sel{width:34px;height:34px;line-height:28px;z-index:5;font-size:13px}.pin.sel{outline:3px solid #111}
+.zoom{float:right;display:flex;gap:6px}
+.panel{margin-top:14px;background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:16px}
+.panel h3{margin:0 0 2px}.meta{color:var(--text-secondary);font-size:14px;margin:0 0 12px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.pgrid figure{margin:0;cursor:pointer}.pgrid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;display:block;background:#e4ebe7}
+.pgrid figcaption{font-size:12px;color:var(--text-secondary);padding:3px 0}
+img.miss{min-height:90px;font-size:12px;color:var(--text-secondary);padding:8px}
+#cmp{max-width:680px;margin:0 auto}.cmp{position:relative;border-radius:var(--r);overflow:hidden;background:#111;line-height:0}
+.cmp img{width:100%;display:block}.cmp img+img{position:absolute;inset:0;height:100%;object-fit:cover;opacity:0}
+.cmp .yr{position:absolute;left:12px;top:12px;background:#000a;color:#fff;padding:3px 12px;border-radius:999px;font:700 16px/1.6 sans-serif}
+.cmp-range{width:100%;margin:14px 0 8px;accent-color:var(--primary);height:28px}
+.cmp-note{font-size:13px;color:var(--text-secondary)}
+.content-grid,.findings-grid,.conclusion-content{display:grid;gap:16px}
+.content-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.findings-grid{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.content-box,.finding-card,.conclusion-box,.methodology-item,.comparison-box{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:18px}
+.content-box h3,.finding-card h4,.conclusion-box h3{margin:0 0 8px;color:var(--primary-dark)}.finding-card h4{font-size:16px}
+.content-box i,.finding-card i,.conclusion-box i{color:var(--primary);margin-right:6px}
+.finding-card.critical{border-left:4px solid var(--red)}.finding-card.critical i{color:var(--red)}
+.highlight-list,.findings-list{padding-left:20px}.highlight-list li,.findings-list li{margin:4px 0}
+.comparison-box{margin-top:18px}.comparison-box h3{margin:0 0 10px}
+.comparison-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.comparison-item{background:var(--alt);border-radius:10px;padding:12px;text-align:center}
+.comparison-item .label{display:block;font-size:13px;color:var(--text-secondary)}.comparison-item .value{font-size:20px;font-weight:700;color:var(--primary-dark)}
+.methodology-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.methodology-step,.rec-number{width:30px;height:30px;border-radius:50%;background:var(--primary);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;flex:none}
+.methodology-item h3{margin:8px 0}
+.tabs{display:flex;gap:8px;overflow-x:auto;margin-bottom:18px;padding-bottom:4px}
+.tab-btn{border:1px solid var(--bd);background:#fff;border-radius:999px;padding:7px 16px;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap}
+.tab-btn.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.tab-pane{display:none}.tab-pane.active{display:block}.tab-pane>h3{margin-top:0}
+.alert{border-radius:10px;padding:12px 16px;margin:0 0 16px}.alert-warning{background:#fff4e5;border:1px solid #f5c27a}.alert-info{background:#e8f4ef;border:1px solid #9ccab8}
+.ba-container{position:relative;overflow:hidden;border-radius:var(--r);line-height:0;max-width:760px;margin:0 auto}
+.ba-image{width:100%;display:block}.ba-before{position:absolute;top:0;left:0;height:100%;overflow:hidden}.ba-before .ba-image{max-width:none}
+.ba-divider{position:absolute;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 4px #0008}
+.ba-slider{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba-label{position:absolute;top:10px;background:#000a;color:#fff;padding:2px 10px;border-radius:999px;font:700 13px/1.6 sans-serif}.ba-label.before{left:10px}.ba-label.after{right:10px}
+.ba-caption{text-align:center;color:var(--text-secondary);font-size:14px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:12px}
+.gallery-item{margin:0;background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden}
+.gallery-item img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.gallery-caption{padding:6px 10px;font-size:13px;color:var(--text-secondary)}
+.timeline{position:relative;margin-top:10px;padding-left:22px;border-left:3px solid #b7d3c7}
+.timeline-item{position:relative;display:grid;grid-template-columns:170px 1fr;gap:14px;background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:14px 16px;margin:0 0 14px;cursor:pointer;transition:box-shadow .15s}
+.timeline-item:hover,.timeline-item:focus{box-shadow:0 4px 16px #0a4d3922;outline:none;border-color:var(--primary)}
+.timeline-item::before{content:"";position:absolute;left:-33px;top:20px;width:15px;height:15px;border-radius:50%;background:var(--primary);border:3px solid var(--alt)}
+.timeline-item::after{content:"View record ›";position:absolute;right:14px;bottom:10px;font-size:12px;color:var(--primary);font-weight:700}
+.timeline-date{font-weight:700;color:var(--primary-dark)}.timeline-content h4{margin:0 0 4px}.timeline-content p{margin:0 0 8px;padding-right:90px}
+@media(max-width:640px){.timeline-item{grid-template-columns:1fr;gap:4px}.timeline-content p{padding-right:0;margin-bottom:22px}}
+.timeline-badge{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:2px 10px;color:#fff;background:#6b7a73}
+.badge-info{background:#2f7de1}.badge-warning{background:#d98a0b}.badge-danger{background:#c0392b}.badge-dark{background:#2d3a35}.badge-secondary{background:#6b7a73}
+.conclusion-content{grid-template-columns:1fr}.conclusion-box.critical-message{border-left:4px solid var(--red)}
+blockquote{margin:12px 0;padding:10px 16px;background:#fff4f2;border-left:4px solid var(--red);border-radius:0 8px 8px 0}blockquote p{margin:0}
+.recommendation-item{display:flex;gap:12px;margin:12px 0}.rec-content h4{margin:0}.rec-content p{margin:2px 0 0}
+.contact{background:linear-gradient(135deg,#0a4d39,#127a58);color:#fff;text-align:center;padding:44px 0}
+.contact h2{margin:0 0 8px;font-size:26px}.contact p{margin:0 auto 20px;max-width:640px;opacity:.92}
+.contact .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.contact .btns a{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--primary-dark);text-decoration:none;font-weight:700;border-radius:999px;padding:10px 22px}
+.contact .btns a:hover{background:#e6f3ed}
+.footer{background:#0b3b2c;color:#d7e6df;padding:36px 0 18px;font-size:14px}.footer a{color:#fff}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}.footer h4{color:#fff;margin:0 0 8px}
+.footer ul{list-style:none;padding:0;margin:0}.footer li{margin:5px 0}.footer-bottom{border-top:1px solid #ffffff30;margin-top:22px;padding-top:12px;text-align:center;opacity:.85}.footer-bottom p{margin:2px 0}
+.ov{position:fixed;inset:0;background:#000b;z-index:100;display:none;align-items:flex-start;justify-content:center;overflow:auto;padding:24px 12px}.ov.on{display:flex}
+.modal{background:#fff;border-radius:var(--r);max-width:900px;width:100%;padding:20px;position:relative}
+.x{position:absolute;right:12px;top:10px;border:0;background:none;font-size:28px;cursor:pointer;line-height:1;color:var(--text-secondary)}
+.modal h3{margin:0 0 2px;padding-right:30px}.modal .tdesc{margin:8px 0 14px}
+.lb{align-items:center;flex-direction:column;justify-content:center}.lb .box{max-width:96vw;max-height:80vh;line-height:0}.lb .box img{max-width:96vw;max-height:80vh;object-fit:contain;border-radius:6px}
+.lb .cap{color:#fff;margin-top:10px;font-size:14px;text-align:center}
+.lb button{position:absolute;border:0;background:#ffffff26;color:#fff;font-size:28px;width:46px;height:46px;border-radius:50%;cursor:pointer}
+.lb .p{left:12px;top:50%}.lb .n{right:12px;top:50%}.lb .c{right:12px;top:12px}
+.totop{position:fixed;right:16px;bottom:16px;width:42px;height:42px;border-radius:50%;border:0;background:var(--primary);color:#fff;font-size:18px;cursor:pointer;display:none;z-index:40}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container">
+<div class="navbar-brand"><h1><i class="fas fa-leaf"></i> Mangrove Ecosystem Research</h1></div>
+<ul class="navbar-menu">
+<li><a href="#map">Map</a></li><li><a href="#compare">Compare</a></li><li><a href="#overview">Overview</a></li><li><a href="#methodology">Study Area</a></li><li><a href="#findings">Findings</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#conclusions">Conclusions</a></li><li><a href="#contact">Contact</a></li>
+</ul></div></nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<h1>Hydrological Severance and Sediment Imbalance</h1>
+<h2>The Structural Decline of a Mangrove Ecosystem in Southern Selangor</h2>
+<p class="subtitle">Chronological Record: 2007–2026 | Research Period: March 2025 – February 2026</p>
+<a href="#overview" class="cta-button">Read Full Report <i class="fas fa-arrow-down"></i></a>
+</div>
+</section>
+
+
+<section id="map" class="section">
+<div class="container">
+<h2 class="section-title">Interactive Survey Map</h2>
+<p class="lead">Each marker is a survey point. Select a marker to open its photo record. Use the year and zone filters to change what is shown.</p>
+<div class="chips" id="yearChips"><b>Year</b></div>
+<div class="chips" id="zoneChips"><b>Zone</b><span class="zoom"><button class="chip on" data-z="1">1×</button><button class="chip" data-z="2">2×</button><button class="chip" data-z="3">3×</button></span></div>
+<div class="mapbox"><div class="mapview"><div class="mapstage" id="stage"><img src="map.jpg" alt="Aerial map of the study area"></div></div></div>
+<div class="panel" id="panel"><p class="meta" style="margin:0">Select a marker on the map to view its photos.</p></div>
+</div>
+</section>
+
+<section id="compare" class="section alt-bg">
+<div class="container">
+<h2 class="section-title">Aerial Comparison Over Time</h2>
+<p class="lead">Drag the slider to move through the years and see how the coastline changes.</p>
+<div id="cmp"></div>
+</div>
+</section>
+
+<!-- Quick Statistics -->
+<section class="quick-stats">
+<div class="container">
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-tree"></i></div>
+<h3>46.8%</h3>
+<p>Mangrove Area Loss</p>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-water"></i></div>
+<h3>540 m²/yr</h3>
+<p>Sand Encroachment Rate</p>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+<h3>18 Years</h3>
+<p>Monitoring Period</p>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-dna"></i></div>
+<h3>3–4 Species</h3>
+<p>Mangrove Types</p>
+</div>
+</div>
+</section>
+
+<!-- Overview Section -->
+<section id="overview" class="section">
+<div class="container">
+<h2 class="section-title">1. Overview</h2>
+<div class="content-grid">
+<div class="content-box">
+<h3><i class="fas fa-exclamation-triangle"></i> The Ecological Crisis</h3>
+<p>Since 2007, a mangrove ecosystem along the southern coast of Selangor has been subject to long-term, cumulative, and structural degradation. This process is not a sudden event but a clearly traceable ecological decline trajectory that has remained largely unaddressed over the years.</p>
+<ul class="highlight-list">
+<li>2007–2017: Large-scale white sand encroachment, directly burying intertidal sediments</li>
+<li>2007–2025: At least 46.8% of the original ~22.6 hectares permanently lost</li>
+<li>Sand encroachment rate: ~540 m²/year over 18 years</li>
+<li>2025–2026: Engineering interventions without proper ecological assessments accelerate collapse</li>
+</ul>
+</div>
+<div class="content-box">
+<h3><i class="fas fa-map-marker-alt"></i> Study Location</h3>
+<p>The study area is located along the southern coast of Selangor at Kuala Langat, Tanjung Sepat (Pantai Cunang), bounded to the north by Batu Laut and to the south by Sungai Pelak.</p>
+<p>This area occupies a key ecological position at the river mouth–coast interface:</p>
+<ul class="highlight-list">
+<li>Coastal protection</li>
+<li>Supporting local fisheries</li>
+<li>Providing refuge for diverse species</li>
+<li>Irreplaceable component of regional coastal systems</li>
+</ul>
+</div>
+</div>
+<div class="comparison-box">
+<h3>Key Data Comparison</h3>
+<div class="comparison-grid">
+<div class="comparison-item">
+<span class="label">Original Area</span>
+<span class="value">22.6 hectares</span>
+</div>
+<div class="comparison-item">
+<span class="label">Area Lost</span>
+<span class="value">10.58 hectares</span>
+</div>
+<div class="comparison-item">
+<span class="label">White Sand Area (2025)</span>
+<span class="value">9,752 m²</span>
+</div>
+<div class="comparison-item">
+<span class="label">Monitoring Period</span>
+<span class="value">18 Years</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Study Area Section -->
+<section id="methodology" class="section alt-bg">
+<div class="container">
+<h2 class="section-title">2. Study Area Overview &amp; Methodology</h2>
+<div class="methodology-content">
+<div class="methodology-item">
+<div class="methodology-step">1</div>
+<h3>Spatial Partitioning</h3>
+<p>This study divides the mangroves into two major zones:</p>
+<ul>
+<li><strong>Western Zone:</strong> A001, A002, A003</li>
+<li><strong>Eastern Zone:</strong> B001</li>
+</ul>
+</div>
+<div class="methodology-item">
+<div class="methodology-step">2</div>
+<h3>White Sand Source Analysis</h3>
+<p>Official explanations attribute sand to natural geomorphological evolution following the 2004 tsunami. However, considering regional development contexts, human influences cannot be excluded.</p>
+</div>
+<div class="methodology-item">
+<div class="methodology-step">3</div>
+<h3>Temporal Demarcation</h3>
+<p>The study uses 2025 as a temporal demarcation to compare coastal structure before and after human engineering interventions.</p>
+</div>
+<div class="methodology-item">
+<div class="methodology-step">4</div>
+<h3>Data Sources</h3>
+<ul>
+<li>Satellite remote sensing imagery</li>
+<li>Field surveys and observations</li>
+<li>Biodiversity records</li>
+<li>Hydrological monitoring</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Findings Section -->
+<section id="findings" class="section">
+<div class="container">
+<h2 class="section-title">3. Major Findings</h2>
+<div class="tabs">
+<button class="tab-btn active" data-tab="findings-1">Coastal Structure Before 2025</button>
+<button class="tab-btn" data-tab="findings-2">Coastal Changes After 2025</button>
+<button class="tab-btn" data-tab="findings-3">Sand Advancement Trends</button>
+<button class="tab-btn" data-tab="findings-4">Biodiversity &amp; Ecology</button>
+<button class="tab-btn" data-tab="findings-5">Species Distribution</button>
+</div>
+<div class="tab-content">
+<!-- Tab 1: Before 2025 -->
+<div id="findings-1" class="tab-pane active">
+<h3>Coastal Structure Characteristics Before 2025</h3>
+<div class="findings-grid">
+<div class="finding-card">
+<h4><i class="fas fa-water"></i> Seaward Soft Mangrove Belt</h4>
+<p>Directly exposed to tidal and wave action, functioning as a buffer to dissipate wave energy, stabilize sediments, and provide shelter for intertidal species.</p>
+</div>
+<div class="finding-card">
+<h4><i class="fas fa-mountain"></i> White Sand Deposition Zone</h4>
+<p>Located in front of the mangrove forest, elevated relative to inland mangroves, preventing seawater from reaching interior areas during high tide.</p>
+</div>
+<div class="finding-card">
+<h4><i class="fas fa-exclamation-circle"></i> High-Risk Zones</h4>
+<p>B001 and A001 zones exhibited the highest ecological risk from persistent sand encroachment and westward advancement.</p>
+</div>
+<div class="finding-card">
+<h4><i class="fas fa-seedling"></i> Failed Natural Regeneration</h4>
+<p>Mangrove seedlings struggled to establish; viviparous propagules rapidly decayed under harsh conditions.</p>
+</div>
+</div>
+</div>
+<!-- Tab 2: After 2025 -->
+<div id="findings-2" class="tab-pane">
+<h3>Coastal Structure Changes After 2025</h3>
+<div class="alert alert-warning">
+<i class="fas fa-exclamation-triangle"></i>
+<strong>Critical Turning Point:</strong> Starting in 2025, the coastal structure underwent drastic human-induced modification.
+</div>
+<div class="findings-grid">
+<div class="finding-card critical">
+<h4><i class="fas fa-hard-hat"></i> Engineering Intervention</h4>
+<p>RM7.9 million DID (Department of Irrigation and Drainage) river mouth coastal protection project (June 21, 2024 – July 21, 2026), including a 375 m rock revetment, training walls, and beach nourishment works.</p>
+</div>
+<div class="finding-card critical">
+<h4><i class="fas fa-tree"></i> Vegetation Destruction</h4>
+<p>Newly deposited sand rapidly buries and kills vegetation. Previously surviving mangroves show pronounced mortality and structural collapse.</p>
+</div>
+<div class="finding-card critical">
+<h4><i class="fas fa-ban"></i> Hydrological Severance</h4>
+<p>Seawalls and sand deposits block all potential seawater pathways. Tidal exchange nearly completely halted.</p>
+</div>
+<div class="finding-card critical">
+<h4><i class="fas fa-times-circle"></i> Ecological Consequences</h4>
+<p>Post-2025 engineering has systematically undermined the operational foundation of the entire ecosystem.</p>
+</div>
+</div>
+<!-- Before-After Slider — correctly placed inside tab-pane -->
+<div class="before-after-small">
+<h4 style="text-align:center; margin:1.5rem 0 0.8rem; color: var(--primary-dark);">Coastal Structure Comparison: 2007 vs. Post-2025</h4>
+<div class="ba-container">
+<img src="images/2025.png" alt="After 2025" class="ba-image">
+<div class="ba-before">
+<img src="images/2007.png" alt="Before 2007" class="ba-image">
+</div>
+<div class="ba-divider"></div>
+<input type="range" min="0" max="100" value="50" class="ba-slider" aria-label="Drag to compare before and after">
+<div class="ba-label before">2007</div>
+<div class="ba-label after">2025</div>
+</div>
+<p class="ba-caption">Drag the slider to reveal changes after engineering intervention and sand advancement.</p>
+</div>
+</div>
+<!-- Tab 3: Sand Advancement -->
+<div id="findings-3" class="tab-pane">
+<h3>White Sand Advancement Trend and Regional Ecological Risk</h3>
+<div class="findings-grid">
+<div class="finding-card">
+<h4><i class="fas fa-chart-line"></i> Advancement Rate and Pattern</h4>
+<p><strong>Before 2025:</strong> Sand consistently advanced westward from B001 zone at accelerating rates. <strong>2025 Status:</strong> Sand front reached the boundary between A001 and A002.</p>
+</div>
+<div class="finding-card">
+<h4><i class="fas fa-expand"></i> Area Expansion Data</h4>
+<p><strong>2025 White Sand Area:</strong> 9,752 m². <strong>Net Increase Rate:</strong> ~540 m²/year. <strong>Growth Pattern:</strong> Non-linear with early rapid initiation.</p>
+</div>
+<div class="finding-card">
+<h4><i class="fas fa-warning"></i> Beyond Natural Processes</h4>
+<p>This expansion over 18 years exceeds the scale explainable by natural sedimentation alone, and directly threatens mangrove stability.</p>
+</div>
+<div class="finding-card">
+<h4><i class="fas fa-exclamation-triangle"></i> Regional Chain Reaction Risk</h4>
+<p>Current engineering presents local and regional risks, potentially causing irreversible mangrove damage along the southern Selangor coast.</p>
+</div>
+</div>
+</div>
+<!-- Tab 4: Biodiversity -->
+<div id="findings-4" class="tab-pane">
+<h3>Biodiversity and Ecological Significance</h3>
+<div class="findings-grid">
+<div class="finding-card highlight">
+<h4><i class="fas fa-leaf"></i> Flora — Mangrove Species</h4>
+<p>2–3 mangrove species recorded: <em>Rhizophora</em>, <em>Bruguiera</em>, and <em>Avicennia</em>, indicating a structurally complex and mature ecosystem.</p>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img src="images/Rhizophora-mangrove.png" alt="Rhizophora" loading="lazy">
+<div class="gallery-caption">Rhizophora</div>
+</div>
+<div class="gallery-item">
+<img src="images/Bruguiera-mangrove.png" alt="Bruguiera" loading="lazy">
+<div class="gallery-caption">Bruguiera</div>
+</div>
+<div class="gallery-item">
+<img src="images/Avicennia-mangrove.png" alt="Avicennia" loading="lazy">
+<div class="gallery-caption">Avicennia</div>
+</div>
+</div>
+</div>
+<div class="finding-card highlight">
+<h4><i class="fas fa-dove"></i> Avifauna (Birds)</h4>
+<p>Grey Heron, Little Egret, Striated Heron, <em>Todiramphus chloris</em>, <em>Haliastur indus</em>, Crow, Seagull, and other raptors. Hornbills observed historically.</p>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img src="images/Little Egret-mangrove.png" alt="Little Egret" loading="lazy">
+<div class="gallery-caption">Little Egret</div>
+</div>
+<div class="gallery-item">
+<img src="images/Striated Heron-mangrove.png" alt="Striated Heron" loading="lazy">
+<div class="gallery-caption">Striated Heron</div>
+</div>
+<div class="gallery-item">
+<img src="images/Todiramphus chloris-mangrove.png" alt="Todiramphus chloris" loading="lazy">
+<div class="gallery-caption">Todiramphus chloris</div>
+</div>
+</div>
+</div>
+<div class="finding-card highlight">
+<h4><i class="fas fa-fish"></i> Pelagic &amp; Benthic Fauna</h4>
+<p>Fish species, Mudskippers, Pufferfish, <em>Platycephalus indicus</em> Linnaeus, and bivalves (mussels, clams), indicating stable water exchange and a productive benthic ecosystem.</p>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img src="images/mudskipper-mangrove.png" alt="Mudskipper" loading="lazy">
+<div class="gallery-caption">Mudskipper</div>
+</div>
+<div class="gallery-item">
+<img src="images/pufferfish-estuary.png" alt="Pufferfish" loading="lazy">
+<div class="gallery-caption">Pufferfish</div>
+</div>
+<div class="gallery-item">
+<img src="images/Platycephalus indicus Linnaeus-mangrove.png" alt="Platycephalus indicus Linnaeus" loading="lazy">
+<div class="gallery-caption">Platycephalus indicus</div>
+</div>
+</div>
+</div>
+<div class="finding-card highlight">
+<h4><i class="fas fa-bug"></i> Intertidal Macrofauna</h4>
+<p><strong>Crustaceans:</strong> Mantis shrimps, crabs (various species), shrimp, and shellfish.</p>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img src="images/Mantis shrimps-mangrove.png" alt="Mantis shrimps" loading="lazy">
+<div class="gallery-caption">Mantis Shrimps</div>
+</div>
+<div class="gallery-item">
+<img src="images/crabs-mangrove.png" alt="Crabs" loading="lazy">
+<div class="gallery-caption">Crabs</div>
+</div>
+<div class="gallery-item">
+<img src="images/Shellfish-mangrove.png" alt="Shellfish" loading="lazy">
+<div class="gallery-caption">Shellfish</div>
+</div>
+</div>
+</div>
+<div class="finding-card highlight">
+<h4><i class="fas fa-shield-alt"></i> Megafauna &amp; Protected Species</h4>
+<p><strong>Mammals:</strong> Macaques, Monitor lizards. <strong>Chelonians:</strong> Horseshoe crabs (<em>Tachypleus gigas</em> / <em>Carcinoscorpius rotundicauda</em>) — a highly protected intertidal species and key indicator of ecosystem health.</p>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img src="images/Horseshoe crabs-mangrove.png" alt="Horseshoe crabs" loading="lazy">
+<div class="gallery-caption">Horseshoe Crabs</div>
+</div>
+</div>
+</div>
+</div><!-- end findings-grid -->
+<div class="alert alert-info" style="margin-top: 1.5rem;">
+<i class="fas fa-check-circle"></i>
+<strong>Conclusion:</strong> The ecosystem exhibits high biodiversity and functional diversity. This species richness indicates that what occurred was a <em>systemic collapse</em>, not simple vegetation loss — the ecosystem was thriving before 2025.
+</div>
+</div><!-- end findings-4 -->
+<!-- Tab 5: Species Distribution -->
+<div id="findings-5" class="tab-pane">
+<h3>Species Distribution Differences and Hydrological Imbalance</h3>
+<div class="findings-grid">
+<div class="finding-card">
+<h4><i class="fas fa-chart-pie"></i> Key Observation</h4>
+<p><strong>A001 &amp; A002:</strong> Live organisms mainly recorded. <strong>B001 outer areas:</strong> Numerous deceased individuals. This spatial pattern directly reflects severe hydrological imbalance.</p>
+</div>
+<div class="finding-card">
+<h4><i class="fas fa-biohazard"></i> Biological Sink Zones</h4>
+<p>Abnormal water exchange prevents energy dissipation. Organisms cannot return to suitable habitats. Seedling establishment is halted.</p>
+</div>
+<div class="finding-card">
+<h4><i class="fas fa-link"></i> Cascading Impact Risk</h4>
+<p>Engineering may alter hydrodynamics affecting other zones. Mangroves depend on spatial continuity — systemic collapse is likely if no intervention occurs.</p>
+</div>
+</div>
+</div><!-- end findings-5 -->
+</div><!-- end tab-content -->
+</div>
+</section>
+
+<!-- Timeline Section -->
+<section id="timeline" class="section alt-bg">
+<div class="container">
+<h2 class="section-title">4. Field Observation Timeline</h2>
+<p class="section-subtitle">March 2025 – February 2026</p>
+<p class="tl-hint">Select an entry to open its photo record and description.</p>
+<div class="timeline">
+<div class="timeline-item" data-date="2025-03-09" tabindex="0" role="button">
+<div class="timeline-date">March 9, 2025</div>
+<div class="timeline-content">
+<h4>Initial Exploration</h4>
+<p>First entry into taller mangrove areas (A001 &amp; A002); ecosystem largely intact.</p>
+<span class="timeline-badge badge-info">Exploration</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-04-13" tabindex="0" role="button">
+<div class="timeline-date">April 13, 2025</div>
+<div class="timeline-content">
+<h4>B001 High Tide Observation</h4>
+<p>B001 area observed at high tide; fish carcasses detected; sand filling projects noted.</p>
+<span class="timeline-badge badge-warning">Anomaly</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-06-29" tabindex="0" role="button">
+<div class="timeline-date">June 29, 2025</div>
+<div class="timeline-content">
+<h4>Systematic Survey</h4>
+<p>Baseline coastal mapping and early signs of human impact recorded.</p>
+<span class="timeline-badge badge-secondary">Data Collection</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-07-08" tabindex="0" role="button">
+<div class="timeline-date">July 8, 2025</div>
+<div class="timeline-content">
+<h4>Hydrological Changes</h4>
+<p>Internal water retention deepened and discolored; inland substrate dry.</p>
+<span class="timeline-badge badge-danger">Warning</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-07-24" tabindex="0" role="button">
+<div class="timeline-date">July 24, 2025</div>
+<div class="timeline-content">
+<h4>Tidal Connectivity Degraded</h4>
+<p>Previously retained water fully dried; tidal connectivity further degraded.</p>
+<span class="timeline-badge badge-danger">Critical</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-07-26" tabindex="0" role="button">
+<div class="timeline-date">July 26, 2025</div>
+<div class="timeline-content">
+<h4>B001 Mass Mortality</h4>
+<p>Many dead animals and fallen mangroves observed; human debris recorded.</p>
+<span class="timeline-badge badge-danger">Collapse Signs</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-07-27" tabindex="0" role="button">
+<div class="timeline-date">July 27, 2025</div>
+<div class="timeline-content">
+<h4>Hydrological Severance Confirmed</h4>
+<p>Seawater exchange at mangrove front largely blocked; outer mangrove collapse observed.</p>
+<span class="timeline-badge badge-danger">Critical Point</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-07-28" tabindex="0" role="button">
+<div class="timeline-date">July 28, 2025</div>
+<div class="timeline-content">
+<h4>Seawall Construction Confirmed</h4>
+<p>B001 seawall construction officially confirmed.</p>
+<span class="timeline-badge badge-dark">Engineering</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-08-01" tabindex="0" role="button">
+<div class="timeline-date">August 1, 2025</div>
+<div class="timeline-content">
+<h4>Abnormal Water Phenomenon</h4>
+<p>A003 area water turned deep red; cause uncertain — possibly anaerobic decomposition or algal bloom.</p>
+<span class="timeline-badge badge-warning">Anomaly</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-09-22" tabindex="0" role="button">
+<div class="timeline-date">September 22, 2025</div>
+<div class="timeline-content">
+<h4>Seawall Progress</h4>
+<p>Seawall construction entering B001 area.</p>
+<span class="timeline-badge badge-dark">Progress</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-10-29" tabindex="0" role="button">
+<div class="timeline-date">October 29, 2025</div>
+<div class="timeline-content">
+<h4>Tropical Cyclone Impact</h4>
+<p>Temporary area cleaning observed, but sand-filling works ongoing.</p>
+<span class="timeline-badge badge-secondary">Natural Event</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-11-25" tabindex="0" role="button">
+<div class="timeline-date">November 25, 2025</div>
+<div class="timeline-content">
+<h4>Persistent Discoloration</h4>
+<p>Red-colored water in A003 and outer areas persists; source unresolved.</p>
+<span class="timeline-badge badge-warning">Pollution</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2025-12-09" tabindex="0" role="button">
+<div class="timeline-date">December 9, 2025</div>
+<div class="timeline-content">
+<h4>Benthic Fauna Affected</h4>
+<p>A001 outer beach water turbid; benthic fauna covered by sediment runoff.</p>
+<span class="timeline-badge badge-danger">Damage</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2026-01-29" tabindex="0" role="button">
+<div class="timeline-date">January 29, 2026</div>
+<div class="timeline-content">
+<h4>Large-Scale Rescue Operations</h4>
+<p>Rescued trapped organisms; engineering works reached A001.</p>
+<span class="timeline-badge badge-dark">Expansion</span>
+</div>
+</div>
+<div class="timeline-item" data-date="2026-02-09" tabindex="0" role="button">
+<div class="timeline-date">February 9, 2026</div>
+<div class="timeline-content">
+<h4>Large-Scale Sand Dumping</h4>
+<p>Large-scale white sand dumping in B001 outer areas recorded.</p>
+<span class="timeline-badge badge-danger">Acceleration</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="section">
+<div class="container">
+<h2 class="section-title">5. Image Gallery</h2>
+<p class="section-subtitle">Field documentation and remote sensing imagery (2007–2026)</p>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img src="images/img2007-2017.png" alt="Sand encroachment (2007–2017)" loading="lazy">
+<div class="gallery-caption">Sand encroachment (2007–2017)</div>
+</div>
+<div class="gallery-item">
+<img src="images/img1.1.2.png" alt="Time-series comparison" loading="lazy">
+<div class="gallery-caption">Time-series comparison</div>
+</div>
+<div class="gallery-item">
+<img src="images/img1.1.3.png" alt="DID project information" loading="lazy">
+<div class="gallery-caption">DID project information</div>
+</div>
+<div class="gallery-item">
+<img src="images/img2.0.1.png" alt="Study area map" loading="lazy">
+<div class="gallery-caption">Study area map</div>
+</div>
+<div class="gallery-item">
+<img src="images/img2.0.2.png" alt="2007–2025 series" loading="lazy">
+<div class="gallery-caption">2007–2025 satellite series</div>
+</div>
+<div class="gallery-item">
+<img src="images/img2.0.3.png" alt="Sand expansion" loading="lazy">
+<div class="gallery-caption">Sand expansion mapping</div>
+</div>
+<div class="gallery-item">
+<img src="images/img2.0.4.png" alt="Zone partition map" loading="lazy">
+<div class="gallery-caption">Zone partition map</div>
+</div>
+<div class="gallery-item">
+<img src="images/img2.0.5.png" alt="Beach background" loading="lazy">
+<div class="gallery-caption">Beach background survey</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Conclusions Section -->
+<section id="conclusions" class="section alt-bg">
+<div class="container">
+<h2 class="section-title">6. Conclusions and Recommendations</h2>
+<div class="conclusion-content">
+<div class="conclusion-box">
+<h3><i class="fas fa-check-circle"></i> Research Summary</h3>
+<p>This study documents the progressive structural degradation of a mangrove ecosystem over nearly two decades. What began as gradual white sand encroachment evolved into a compounded ecological crisis, intensified by large-scale engineering interventions introduced after 2025 without comprehensive ecological assessment.</p>
+</div>
+<div class="conclusion-box">
+<h3><i class="fas fa-exclamation-triangle"></i> Critical Findings</h3>
+<ul class="findings-list">
+<li><strong>Geomorphological Erosion:</strong> East-to-west sand advancement systematically compressed mangrove habitats.</li>
+<li><strong>Hydrological Severance:</strong> Post-2025 engineering fundamentally altered coastal system functionality.</li>
+<li><strong>Ecological Indicators:</strong> Biological sink zones and increased mortality signal systemic collapse.</li>
+<li><strong>Regional Risk:</strong> Potential chain reactions affecting the broader southern Selangor coast.</li>
+</ul>
+</div>
+<div class="conclusion-box">
+<h3><i class="fas fa-lightbulb"></i> Urgent Recommendations</h3>
+<div class="recommendations">
+<div class="recommendation-item">
+<span class="rec-number">1</span>
+<div class="rec-content">
+<h4>Independent Ecological Assessment</h4>
+<p>Conduct transparent ecological impact assessments before any continued engineering works.</p>
+</div>
+</div>
+<div class="recommendation-item">
+<span class="rec-number">2</span>
+<div class="rec-content">
+<h4>Regional Hydrodynamic Modelling</h4>
+<p>Evaluate cross-boundary sediment transport and hydrodynamic risks to adjacent mangrove areas.</p>
+</div>
+</div>
+<div class="recommendation-item">
+<span class="rec-number">3</span>
+<div class="rec-content">
+<h4>Hydrological Connectivity Restoration</h4>
+<p>Immediately restore partial tidal exchange to arrest further ecosystem decline.</p>
+</div>
+</div>
+<div class="recommendation-item">
+<span class="rec-number">4</span>
+<div class="rec-content">
+<h4>Sediment Control</h4>
+<p>Implement targeted sediment management measures with urgency and precision.</p>
+</div>
+</div>
+<div class="recommendation-item">
+<span class="rec-number">5</span>
+<div class="rec-content">
+<h4>Conservation Status</h4>
+<p>Formally recognize this area as a conservation-priority coastal ecosystem.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="conclusion-box critical-message">
+<h3><i class="fas fa-hourglass-end"></i> The Present Moment</h3>
+<p>This crisis remains ongoing. Ecological systems retain limited windows of recoverability if structural integrity is restored in time.</p>
+<blockquote>
+<p><strong>If no intervention grounded in scientific evidence is undertaken, the trajectory observed from 2007 to 2026 will likely culminate in irreversible regional mangrove collapse. Conversely, if hydrological restoration and sediment control are implemented with urgency and precision, coexistence between tourism infrastructure and mangrove conservation remains within the realm of possibility.</strong></p>
+</blockquote>
+<p><strong>The present moment represents not an endpoint, but a threshold.</strong></p>
+</div>
+<div class="conclusion-box" style="border-left: 4px solid var(--text-secondary); background: #f8fafc;">
+<h3 style="color: var(--text-secondary);"><i class="fas fa-info-circle" style="color: var(--text-secondary);"></i> Methodological Note</h3>
+<p style="color: var(--text-secondary); font-style: italic;">While the current observations provide a preliminary overview of mangrove coverage, it should be emphasized that these are basic observations. Analyses using higher-resolution imagery would enable more accurate and precise quantification of changes in mangrove habitats, including habitat loss.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<section id="contact" class="contact"><div class="container">
+<h2>Get in Touch</h2>
+<p>Questions, local knowledge or additional observations are always welcome. If you would like to talk about this research, please reach me by phone or email.</p>
+<div class="btns"><a href="tel:+601116313461"><i class="fas fa-phone"></i> 011-1631 3461</a><a href="mailto:bh.chia39@gmail.com"><i class="fas fa-envelope"></i> bh.chia39@gmail.com</a></div>
+</div></section>
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h4>About This Report</h4>
+<p>Independent field research documenting mangrove ecosystem degradation in Southern Selangor (2007–2026), based on systematic field observations over a 12-month period.</p>
+</div>
+<div class="footer-section">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#findings">Findings</a></li>
+<li><a href="#timeline">Timeline</a></li>
+<li><a href="#conclusions">Conclusions</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Related Resources</h4>
+<ul>
+<li><a href="https://www.thestar.com.my/metro/metro-news/2025/10/10/pantai-cunangs-charm-ebbs" target="_blank" rel="noopener">The Star: Pantai Cunang's Charm Ebbs <i class="fas fa-external-link-alt"></i></a></li>
+<li><a href="https://mpkl.gov.my/en/pelawat/tarikan-pelancong/pantai-cunang" target="_blank" rel="noopener">Kuala Langat Council: Pantai Cunang <i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Contact</h4>
+<ul>
+<li><i class="fas fa-user" style="margin-right:0.5rem; opacity:0.6;"></i> Researcher: Hao</li>
+<li><i class="fas fa-envelope" style="margin-right:0.5rem; opacity:0.6;"></i>
+<a href="mailto:bh.chia39@gmail.com">bh.chia39@gmail.com</a>
+</li>
+<li><i class="fas fa-phone" style="margin-right:0.5rem; opacity:0.6;"></i>
+<a href="tel:+60111-631-3461">011-1631 3461</a>
+</li>
+<li><i class="fas fa-calendar" style="margin-right:0.5rem; opacity:0.6;"></i> Research Period: March 2025 – February 2026</li>
+<li><i class="fas fa-clock" style="margin-right:0.5rem; opacity:0.6;"></i> Last Updated: February 16, 2026</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Southern Selangor Mangrove Ecosystem Research. All rights reserved.</p>
+<p>Academic Research &nbsp;|&nbsp; Environmental Assessment &nbsp;|&nbsp; Coastal Ecology</p>
+</div>
+</div>
+</footer>
+
+
+<div class="ov" id="tlov"><div class="modal" id="tlm"><button class="x" aria-label="Close">×</button><div id="tlc"></div></div></div>
+<div class="ov lb" id="lb"><button class="c" aria-label="Close">×</button><button class="p" aria-label="Previous">‹</button><button class="n" aria-label="Next">›</button><div class="box" id="lbimg"></div><div class="cap" id="lbcap"></div></div>
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+<script src="markers.js"></script>
+<script>
+(function(){
+var ROOT="images/",$=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var ZC={A001:"#e5484d",A002:"#e08a00",A003:"#2f7de1",B001:"#8b5cf6","未分区":"#6b7a73"},DATA=window.MARKERS||{};
+function pad(n){return n<10?"0"+n:""+n}
+function pn(s){var p=s.trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);return p?{d:+p[1],m:+p[2],y:+p[3]}:null}
+function tOf(m,i,f){var raw=String(m.note||""),ds=raw.split("-").map(pn).filter(Boolean),fo=[],a1=String(m.name).match(/(\d{4})(?:\/\d+)?$/),a2=raw.match(/(\d{4})/);if(a1)fo.push(a1[1]);if(a2&&fo.indexOf(a2[1])<0)fo.push(a2[1]);
+if(!ds.length){return{label:raw||"Date not recorded",alts:[],fold:fo}}
+var fm=f.match(/^IMG[_-](\d{4})(\d{2})(\d{2})/),k=Math.min(i,ds.length-1);
+if(fm){for(var j=0;j<ds.length;j++){if(ds[j].y==+fm[1]&&ds[j].m==+fm[2]&&ds[j].d==+fm[3]){k=j;break}}}
+var t={d:ds[k].d,m:ds[k].m,y:ds[k].y};t.alts=ds.filter(function(_,j){return j!==k}).concat(fm?[{y:+fm[1],m:+fm[2],d:+fm[3]}]:[]);t.fold=fo;return t}
+function dstr(t){return t.y?t.d+"/"+t.m+"/"+t.y:t.label}
+function photo(f,t,cb){var im=new Image(),c=[],i=0;[t].concat(t.alts||[]).forEach(function(x){if(x.y){c.push({s:ROOT+x.d+"-"+x.m+"-"+x.y+"/"+f,x:x});c.push({s:ROOT+pad(x.d)+"-"+pad(x.m)+"-"+x.y+"/"+f,x:x})}});(t.fold||[]).forEach(function(n){c.push({s:ROOT+n+"/"+f});c.push({s:n+"/"+f})});c.push({s:ROOT+f});
+im.loading="lazy";im.alt=f;im.onload=function(){var x=c[i].x;if(x&&cb)cb(x)};
+im.onerror=function(){i++;if(i<c.length)im.src=c[i].s;else{im.onerror=null;im.onload=null;im.classList.add("miss");im.alt="Photo not found: "+f}};im.src=c[0].s;return im}
+var ALL=[];Object.keys(DATA).forEach(function(y){DATA[y].forEach(function(m){m.photos.forEach(function(f,i){ALL.push({f:f,t:tOf(m,i,f),name:m.name,zone:m.zone})})})});
+var ALLM=[];Object.keys(DATA).forEach(function(y){ALLM=ALLM.concat(DATA[y])});ALLM.sort(function(a,b){return a.no-b.no});
+/* lightbox */
+var LB=$("#lb"),L=[],li=0;
+function lbCap(){var p=L[li];$("#lbcap").textContent=p.name+" · "+dstr(p.t)+" · "+p.f+" ("+(li+1)+"/"+L.length+")"}
+function lbDraw(){var p=L[li],b=$("#lbimg");b.innerHTML="";b.appendChild(photo(p.f,p.t,function(x){p.t.d=x.d;p.t.m=x.m;p.t.y=x.y;lbCap()}));lbCap()}
+function lbOpen(l,i){L=l;li=i;LB.classList.add("on");lbDraw()}
+function lbGo(d){li=(li+d+L.length)%L.length;lbDraw()}
+$(".p",LB).onclick=function(e){e.stopPropagation();lbGo(-1)};$(".n",LB).onclick=function(e){e.stopPropagation();lbGo(1)};
+$(".c",LB).onclick=function(){LB.classList.remove("on")};LB.onclick=function(e){if(e.target===LB||e.target.id==="lbimg")LB.classList.remove("on")};
+document.addEventListener("keydown",function(e){if(LB.classList.contains("on")){if(e.key==="Escape")LB.classList.remove("on");if(e.key==="ArrowLeft")lbGo(-1);if(e.key==="ArrowRight")lbGo(1)}else if(e.key==="Escape")$("#tlov").classList.remove("on")});
+function grid(list,cap){var g=document.createElement("div");g.className="pgrid";list.forEach(function(p,i){var f=document.createElement("figure");var c=document.createElement("figcaption");c.textContent=cap(p);f.appendChild(photo(p.f,p.t,function(x){p.t.d=x.d;p.t.m=x.m;p.t.y=x.y;c.textContent=cap(p)}));f.appendChild(c);f.onclick=function(){lbOpen(list,i)};g.appendChild(f)});return g}
+/* map */
+var yr="2025",zs={A001:1,A002:1,A003:1,B001:1,"未分区":1},sel=null,stage=$("#stage");
+function pins(){$$(".pin",stage).forEach(function(n){n.remove()});(yr==="all"?ALLM:(DATA[yr]||[])).forEach(function(m){if(!zs[m.zone])return;var b=document.createElement("button");b.className="pin"+(m===sel?" sel":"");b.style.cssText="left:"+m.x+"%;top:"+m.y+"%;background:"+(ZC[m.zone]||"#555");b.textContent=m.no;b.title=m.name;b.onclick=function(){sel=m;pins();show(m)};stage.appendChild(b)})}
+function show(m){var p=$("#panel");p.innerHTML="";var h=document.createElement("h3");h.textContent=m.name;var d=document.createElement("p");d.className="meta";d.textContent="Zone "+(m.zone==="未分区"?"Unassigned":m.zone)+" · Survey date: "+(m.note||"not recorded")+" · "+m.photos.length+" photo"+(m.photos.length>1?"s":"");p.appendChild(h);p.appendChild(d);
+var l=m.photos.map(function(f,i){return{f:f,t:tOf(m,i,f),name:m.name,zone:m.zone}});p.appendChild(grid(l,function(x){return dstr(x.t)}));p.scrollIntoView({behavior:"smooth",block:"nearest"})}
+var yc=$("#yearChips");["all"].concat(Object.keys(DATA).sort()).forEach(function(y){var b=document.createElement("button"),n=y==="all"?ALLM.length:(DATA[y]||[]).length;b.className="chip"+(y===yr?" on":"");b.textContent=(y==="all"?"All":y)+" ("+n+")";b.onclick=function(){yr=y;sel=null;$$(".chip",yc).forEach(function(c){c.classList.remove("on")});b.classList.add("on");pins()};yc.appendChild(b)});
+var zc=$("#zoneChips");["A001","A002","A003","B001","未分区"].forEach(function(z){var b=document.createElement("button");b.className="chip on";b.innerHTML='<i class="dot" style="background:'+ZC[z]+'"></i>'+(z==="未分区"?"Unassigned":z);b.onclick=function(){zs[z]=!zs[z];b.classList.toggle("on",!!zs[z]);pins()};zc.insertBefore(b,$(".zoom",zc))});
+$$(".zoom .chip").forEach(function(b){b.onclick=function(){stage.style.width=(b.dataset.z*100)+"%";$$(".zoom .chip").forEach(function(c){c.classList.toggle("on",c===b)})}});
+pins();
+/* year comparison */
+var Y=[[1985,"images/1.png"],[2007,"images/2.png"],[2012,"images/3.png"],[2013,"images/4.png"],[2015,"images/5.png"],[2017,"images/6.png"],[2019,"images/7.png"],[2020,"images/8.png"],[2021,"images/9.png"],[2025,"images/10.png"]],ok=[],bad=[],left=Y.length;
+Y.forEach(function(y){var t=new Image();t.onload=function(){ok.push(y);fin()};t.onerror=function(){bad.push(y[1]);fin()};t.src=y[1]});
+function fin(){if(--left)return;ok.sort(function(a,b){return a[0]-b[0]});var box=$("#cmp");
+if(ok.length<2){box.innerHTML='<p class="cmp-note">Add at least two aerial images (images/1.png, images/2.png, …) to enable the comparison.</p>';return}
+var w=document.createElement("div");w.className="cmp";ok.forEach(function(y){var i=new Image();i.src=y[1];i.alt="Aerial image "+y[0];w.appendChild(i)});var lab=document.createElement("div");lab.className="yr";w.appendChild(lab);box.appendChild(w);
+var r=document.createElement("input");r.type="range";r.className="cmp-range";r.min=0;r.max=(ok.length-1)*100;r.value=0;r.setAttribute("aria-label","Drag to change year");box.appendChild(r);
+var cs=document.createElement("div");cs.className="chips";ok.forEach(function(y,k){var b=document.createElement("button");b.className="chip";b.textContent=y[0];b.onclick=function(){r.value=k*100;up()};cs.appendChild(b)});box.appendChild(cs);
+if(bad.length){var n=document.createElement("p");n.className="cmp-note";n.textContent="Images not found yet: "+bad.join(", ");box.appendChild(n)}
+var im=$$("img",w);function up(){var v=+r.value,i=Math.min(Math.floor(v/100),ok.length-2),t=(v-i*100)/100;im.forEach(function(e,k){if(k>0)e.style.opacity=k<=i?1:(k===i+1?t:0)});lab.textContent=ok[Math.round(v/100)][0];$$(".chip",cs).forEach(function(c,k){c.classList.toggle("on",k===Math.round(v/100))})}
+r.oninput=up;up()}
+/* original before/after slider */
+$$(".ba-container").forEach(function(c){var s=$(".ba-slider",c),b=$(".ba-before",c),d=$(".ba-divider",c);function u(){b.style.width=s.value+"%";d.style.left=s.value+"%";$(".ba-image",b).style.width=c.offsetWidth+"px"}s.addEventListener("input",u);window.addEventListener("resize",u);u();$$("img",c).forEach(function(i){i.addEventListener("load",u)})});
+/* findings tabs */
+$$(".tab-btn").forEach(function(b){b.onclick=function(){$$(".tab-btn").forEach(function(x){x.classList.remove("active")});$$(".tab-pane").forEach(function(x){x.classList.remove("active")});b.classList.add("active");$("#"+b.dataset.tab).classList.add("active");$$(".ba-container").forEach(function(c){$(".ba-slider",c).dispatchEvent(new Event("input"))})}});
+/* timeline records */
+var TO=$("#tlov");$(".x",TO).onclick=function(){TO.classList.remove("on")};TO.onclick=function(e){if(e.target===TO)TO.classList.remove("on")};
+function openTL(el){var k=el.dataset.date.split("-"),l=ALL.filter(function(p){return p.t.y==+k[0]&&p.t.m==+k[1]&&p.t.d==+k[2]}),c=$("#tlc");c.innerHTML="";
+var h=document.createElement("h3");h.textContent=$(".timeline-date",el).textContent+" — "+$("h4",el).textContent;c.appendChild(h);
+var p=document.createElement("p");p.className="tdesc";p.textContent=$(".timeline-content p",el).textContent;c.appendChild(p);var bd=$(".timeline-badge",el);if(bd)c.appendChild(bd.cloneNode(true));
+var s=document.createElement("h4");s.textContent="Photo record";s.style.margin="18px 0 8px";c.appendChild(s);
+if(l.length){l.sort(function(a,b){return a.name<b.name?-1:1});c.appendChild(grid(l,function(x){return x.name}))}else{var n=document.createElement("p");n.className="meta";n.textContent="No photos are linked to this date yet.";c.appendChild(n)}
+TO.classList.add("on");TO.scrollTop=0}
+$$(".timeline-item").forEach(function(el){el.onclick=function(){openTL(el)};el.onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();openTL(el)}}});
+var tt=$("#totop");window.addEventListener("scroll",function(){tt.style.display=window.scrollY>600?"block":"none"});tt.onclick=function(){window.scrollTo({top:0,behavior:"smooth"})};
+})();
+</script>
+</body>
+</html>
